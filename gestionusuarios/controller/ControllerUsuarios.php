@@ -5,8 +5,9 @@
     * @version 0.1
 */
 namespace Softing\Base;
-include("ConnectToDataBase.php");
-include("../../BASE/PHP/Sql.php");
+include_once("../../BASE/PHP/Base.php");
+include_once("../../BASE/PHP/ConnectToDataBase.php");
+include_once("../../BASE/PHP/Sql.php");
 
 class ModelClassUserNuevo {     
         private $base_sql = null;    
@@ -34,7 +35,7 @@ class ModelClassUserNuevo {
                         if($resultado)
                         { 
                             echo "<script language='javascript'>
-                            alert ('Se cambio la clave satisfactoriamente');
+                            alert ('Se cambio la clave satisfactoriamente! ');
                             let url = 'http://201.216.197.213';
                             window.location=url;
                             </script>";
@@ -42,7 +43,7 @@ class ModelClassUserNuevo {
                         else 
                         { 
                             echo "<script language='javascript'>
-                            alert ('Error las contraseñas nuevas no son iguales');
+                            alert ('Error. Las contraseñas nuevas no son iguales! ');
                             let url = 'http://201.216.197.213';
                             window.location=url;
                             </script>";
@@ -51,7 +52,7 @@ class ModelClassUserNuevo {
                 else 
                 { 
                     echo "<script language='javascript'>
-                    alert ('La contraseña actual no es igual');
+                    alert ('Error. La contraseña actual no es igual! ');
                     let url = 'http://201.216.197.213';
                     window.location=url;
                     </script>";

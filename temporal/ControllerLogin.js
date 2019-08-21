@@ -30,7 +30,7 @@ ControllerLogin.Login = {
     },
     aceptar: function()
     {
-        let url = "http://201.216.197.213/login";
+        let url = "http://localhost:22000/login";
         let usuario = this.text_usuario.val();
         let pass = this.text_password.val();
         let mensaje = 'usuario=' + usuario + "&pass="+ pass;
@@ -40,8 +40,8 @@ ControllerLogin.Login = {
         XHR.NewXhrGET(thisurl,function(RText){
            
                  let valor_respuesta = JSON.parse(RText);              
-                 let urladmin = 'http://201.216.197.213/usuarios';
-                 let urlusuario = 'http://201.216.197.213/Nuevos';        
+                 let urladmin = 'http://localhost:22000/usuarios';
+                 let urlusuario = 'http://localhost:22000/Nuevos';        
                 if (valor_respuesta['auth'] == 'OK')
                 {
                       $.ajax({
@@ -49,10 +49,13 @@ ControllerLogin.Login = {
                         data:mensaje,
                         url:"/llamadoAjax"
                     }).done(function(datos){
-                        //alert('Los Datos son: ' + JSON.stringify(datos)); 
-                        window.location=urladmin
-                      });
-
+                        alert('Los Datos son: ' + JSON.stringify(datos));
+                        let json = JSON.stringify(datos);
+                        // Almacena la información en sessionStorage
+                        sessionStorage.setItem('data', json);
+                        // Obtiene la información almacenada desde sessionStorage
+                        let sesion = sessionStorage.getItem('data');   
+                   });
                 }
                 if (valor_respuesta['auth'] == 'BAD')
                 {

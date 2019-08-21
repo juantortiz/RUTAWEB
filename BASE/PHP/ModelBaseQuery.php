@@ -77,67 +77,63 @@
                  return $jsonrespuesta; 
                
          }
-         public function resolveArrayPerfiles($data)
-     {    
-
-          $menu1 = array("menu1"=>[0]);$menu2 = array("menu2"=>[0]);$menu3 = array("menu3"=>[0]);                   
-          $solapa1 = 0;$solapa2 = 0;$solapa3 = 0;$solapa4 = 0;$solapa5 = 0;
-
-          foreach($data as $array)
-          {
-               $flag=true;
-               foreach ($array as $clave => $valor)
+        
+        public function resolveArrayToJsonComplex($resultadoarreglo)
+        {
+               foreach($resultadoarreglo as $array) 
+               {                  
+               $flag=0;
+               $arregloToJson = [];
+               $arrayInterno2 = [];
+               $arrayInterno3 = [];
+               $arrayInternoPestanias = [];
+               $arrayInternoPestanias2 = [];
+               foreach ($array as $clave => $valor) 
                {
-                    if($flag)
-                    {                            
-                    switch ($clave) { 
-                         case "menu": 
-                              switch ($valor) { 
-                                   case "1":                                                     
-                                        $menu1=array("menu1"=>[1]);  
-                                        break;                                 
-                                   case "2":                               
-                                        $menu2=array("menu2"=>[1]); 
-                                        break;
-                                   case "3":                               
-                                        $menu3=array("menu3"=>[1]);
-                                        break;
-                                             }
-                         break;
-                         case "solapa": 
-                              switch ($valor) { 
-                                   case "1":
-                                        $solapa1=1;   
-                                        break;                                 
-                                   case "2":                               
-                                        $solapa2=1; 
-                                        break;
-                                   case "3":                               
-                                        $solapa3=1;
-                                        break;
-                                   case "4":                               
-                                        $solapa4=1;
-                                        break;
-                                   case "5":                               
-                                        $solapa5=1;
-                                        break;
-                                             }
-                         break;
-                                   }                                   
-                    $flag=false;
-                    }  
-                    else
+                    if($flag==0) 
                     {
-                         $flag=true;                    
+                         // Para el Menu
+                         $arregloToJson[$clave] = $valor;
+                         $flag++;
+                    } 
+                    elseif($flag==2) 
+                    {
+                         // Para el Nombre
+                         $arrayInternoPestanias[$clave] = $valor;
+                         $flag++;
+                    } 
+                    elseif ($flag==4)
+                    {
+                         // Para las acciones
+                         $opciones = explode(",", $valor);
+                         $arrayInterno2 = [];
+                         foreach ($opciones as $clave => $valor)
+                         {
+                              $arrayInterno2[$valor] = "true";
+                         }
+                         //Crear el arreglo dentro de otro arreglo
+                         $arrayInterno3[] = $arrayInterno2;
+                         $arrayInternoPestanias["acciones"] = $arrayInterno3;
+                         $flag++;
+                    } 
+                    elseif ($flag==6) 
+                    {
+                         // Para el Icon
+                         $arregloToJson['icon'] = $valor;
+                    } 
+                    else 
+                    {
+                       $flag++;                    
                     }
-               }            
-          }
-               $arraysolapa=array($solapa1,$solapa2,$solapa3,$solapa4,$solapa5);
-               $arrayFinal = array("solapas" => $arraysolapa);
-               $Json=array($menu1,$menu2,$menu3,$arrayFinal);               
-               $jsonrespuesta = json_encode($Json);
-               return $jsonrespuesta;   
-     }
+               } 
+                    //Crear el arreglo dentro de otro arreglo
+                    $arrayInternoPestanias2[] = $arrayInternoPestanias;
+                    $arregloToJson["pestanas"] = $arrayInternoPestanias2;
+                    $arregloToJsonFinal[] = $arregloToJson;
+               }                 
+               return $arregloToJsonFinal;              
+       }
+
 }
 
 ?>

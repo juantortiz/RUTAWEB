@@ -17,7 +17,7 @@
      function __construct()
      {
           $this->arregloArgumentos = array(
-          "usuarios_cambio_clave_olvido" => "usuarios_cambio_clave_olvido(:login,:pseguridadcodigo,:respuestaseguridad)",
+          "usuarios_olvido_clave" => "usuarios_olvido_clave(:pseguridadcodigo,:respuestaseguridad,:login,:logincrypt)",
           "usuarios_validarpass" => "usuarios_validarpass(:login,:passactual)",
           "usuarios_cambio_clave_nuevo" => "usuarios_cambio_clave_nuevo(:login,:passactual,:passnueva,:passnuevarep,:pseguridadcodigo,:respuestaseguridad,:usuarioestado)", 
           "mnu_abrir" => "mnu_abrir(:usuario_id)",
@@ -38,8 +38,7 @@
           "usuarios_abm" => "usuarios_abm(:modo,:id,:mail,:nombre,:apellido,:cuil,:grupo_id,:user)",
           "mnu_view" => "mnu_view",
           "mnu_abm" => "mnu_abm(:modo,:id,:tituloMenu,:id_entidades)",
-          "entidades_view"=> "entidades_view",
-          "mnu_url_view" => "mnu_url_view"
+          "entidades_view"=> "entidades_view"
           );
      }
      public function getterArguments($namestoredprocedure)

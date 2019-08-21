@@ -1,0 +1,29 @@
+<?php
+
+    /**
+         * @author Daniel Leon
+         * @category Class ControllerDB con JSON
+         * @version 0.1
+         * @link: none
+    */
+namespace Softing\Controller;
+include_once("BASE/PHP/ModelControllerDataBase.php");
+
+class ControllerDB {
+         private $objmodeldatabase = null;
+         function __construct($table)
+         {
+               $this->objmodeldatabase = new \Softing\Model\ModelControllerDataBase($table);
+         }
+ 
+         public function getterJsonRows ()
+         {
+               $respuesta = $this->objmodeldatabase->getConexion($this->objmodeldatabase->getTable());                 
+               return $respuesta;
+         }
+    }
+    $instance = new ControllerDB("entidades_x_acciones_view");
+    $valorRespuestaTabla1=$instance->getterJsonRows();
+    print_r($valorRespuestaTabla1);
+
+?>

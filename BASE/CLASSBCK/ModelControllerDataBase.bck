@@ -1,0 +1,54 @@
+<?php
+    /**
+         * @author Daniel Leon
+         * @category Class Conexion
+         * @version 0.1
+         * @link: none
+    */
+namespace Softing\Model;
+include_once("BASE/PHP/ModelDataBase.php");
+include_once("BASE/PHP/Sql.php");
+
+class ModelControllerDataBase extends ModelDataBase {
+    public function getTable()
+    {
+        return $this->tablename;
+    }
+    public function getConexion()
+    {    
+        try 
+        { 
+           $this->sql = $this->objsql::SQL_VIEWS.$this->tablename;
+           $recurso = $this->conn->prepare($this->sql);
+           $recurso->execute();    
+           $resultadoarreglo= $recurso->fetchAll();
+           $arregloToJson = [];
+           foreach($resultadoarreglo as $array)
+           {
+                $flag=true;
+                foreach ($array as $clave => $valor)
+                {
+                    if($flag)
+                    {
+                        $arrayInterno[$clave] = $valor;
+                        $flag=false;
+                    }  
+                    else
+                    {
+                        $flag=true;                    
+                    }
+                }            
+                array_push($arregloToJson,$arrayInterno);
+            }           
+            $jsonrespuesta = json_encode($arregloToJson);
+	        return $jsonrespuesta;        
+        }
+        catch (\Exception $e)
+        {
+            $this->error = $e;
+        }
+    }
+
+}
+
+?>

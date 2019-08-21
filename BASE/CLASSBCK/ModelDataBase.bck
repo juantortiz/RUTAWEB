@@ -1,0 +1,61 @@
+<?php
+    /**
+         * @author Juan Tomas Ortiz
+         * @category Class ModelDataBase
+         * @version 0.1
+         * 
+         * 
+    */
+    namespace Softing\Model;
+    include_once("BASE/PHP/ConnectToDataBase.php");
+    include_once("BASE/PHP/Sql.php");
+    
+    class ModelDataBase {
+         private $conn = null;
+         private $sql = null;
+         private $objsql = null;
+         private $objconnect = null;
+         private $tablename = null;
+         private $table = null;
+         private $response = null;
+         public $error = null;
+         function __construct($table)
+         {
+               $this->objconnect = new \Softing\Base\ConnectToDataBase();
+               $this->conn = $this->objconnect->getterPDO();
+               $this->objsql =  new \Softing\Base\Sql();
+               $this->tablename = $table;
+          }
+         public function getTableColumns ()
+         {
+              try 
+              {
+                    $this->sql = $this->objsql::SQL_NUMERO_COLUMNAS;
+                    $arreglotablename = array($this->tablename);
+                    $recurso = $this->conn->prepare($this->sql);
+                    $recurso->execute($arreglotablename);
+                    $resultadoarreglo = $recurso->fetchAll();
+                    return $resultadoarreglo;
+              }
+              catch (\Exception $e)
+              {
+                    $this->error = $e;
+              }
+         }
+         public function getTableRows ()
+         {
+               try 
+               {
+                    $this->sql = $this->objsql::SQL_NUMERO_FILAS;
+                    $recurso = $this->conn->prepare($this->sql);
+                    $recurso->execute();
+                    $resultadoarreglo = $recurso->fetchAll();
+                    return $resultadoarreglo;
+               }
+               catch (\Exception $e)
+               {
+                    $this->error = $e;
+               }
+         }
+    }
+?>

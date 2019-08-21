@@ -1,0 +1,52 @@
+<?php
+    /**
+         * @author Juan Tomas Ortiz
+         * @category Class ControllerDataBase
+         * @version 0.1
+         * @link: none
+         * 
+         * 
+         * 
+         * 
+    */
+    namespace Softing\Controller;
+    include_once("BASE/PHP/ModelDataBase.php");
+
+    class ControllerDataBase {
+         private $objmodeldatabase = null;
+         private $arregloToJson = null;
+         function __construct($table)
+         {
+               $this->objmodeldatabase = new \Softing\Model\ModelDataBase($table);
+               $this->arregloToJson = [];
+          }
+         public function getterJsonColumns ()
+         {
+               $respuesta = $this->objmodeldatabase->getTableColumns();
+                for($i=0;$i <= sizeof($respuesta)-1;$i++)
+               {
+                    $arregloDef = array("name" => $respuesta[$i]["columna"]);
+                    array_push($this->arregloToJson,$arregloDef);
+               } 
+               $jsonrespuesta = json_encode($this->arregloToJson);
+               return $jsonrespuesta;
+         }
+
+         public function getterJsonRows ()
+         {
+               $respuesta = $this->objmodeldatabase->getTableRows();
+               $tamanofilas = sizeof($respuesta);
+               $tamanocolumnas = sizeof($respuesta[0])/2;
+                for($i=0;$i <= $tamanofilas - 1;$i++)
+                {
+                    for($j=0;$j <= $tamanocolumnas - 1;$j++)
+                    {
+                         array_slice($respuesta[$i],$tamanocolumnas);
+                    }
+                    array_push($this->arregloToJson,$respuesta[$i]);
+                } 
+               $jsonrespuesta = json_encode($this->arregloToJson);
+               return $jsonrespuesta;
+         }
+    }
+?>

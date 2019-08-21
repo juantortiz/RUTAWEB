@@ -1,0 +1,43 @@
+.text-info{
+    margin-top: 0.5em;
+}
+
+.envelop 
+{
+  min-height: calc(100vh - 70px);
+}
+.footer 
+{
+  height: 70px;
+  background-color: white;
+}
+
+.button-than 
+{
+  margin: 0.8em;
+}
+
+.fontavatar
+{
+  position:relative;
+  top:1px;
+  font-size: 1.5em;
+  padding-left: 0.5em;
+  color:#0072bb;
+}
+
+.avatar{
+  position: relative;
+  display:inline;
+  top:0.8em;
+}
+
+div.form-control 
+{
+    height: auto;
+}
+
+.form-control.has-error
+{
+    border-color: red;
+}

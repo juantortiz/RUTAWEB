@@ -1,0 +1,5 @@
+[
+    {"name":"id","title":"ID","type":"number","breakpoints":"xs sm","style":{"width":80,"maxWidth":80}},
+    {"name":"descripcion","title":"Descripcion","style":{"width":350,"maxWidth":400}},
+    {"name":"estado","title":"Estado","visible":true}
+  ]

@@ -1,0 +1,15 @@
+td.footable-editing {
+    width: auto;
+}
+div.btn-group.btn-group-xs
+{
+    display:inline-flex !important;    }
+
+ /* provides a red astrix to denote required fields - this should be included in common stylesheet */
+ .form-group.required .control-label:after {
+    content:"*";
+    color:red;
+    margin-left: 4px;
+}
+
+

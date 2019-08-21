@@ -1,0 +1,40 @@
+[
+    {
+      "name":"id",
+      "title":"ID",
+      "type":"number"
+    },
+    {
+      "name":"descripcion",
+      "title":"Descripcion",
+      "style":{"width":350,"maxWidth":400},
+      "visible":false
+    },
+    {
+      "name":"id_grupo",
+      "title":"ID GRUPO",
+      "type":"number",
+      "visible":false
+    },
+    {
+      "name":"grupo_dsc",
+      "title":"Grupo",
+      "visible":false
+
+    },
+    {
+      "name":"id_rol",
+      "title":"ID ROL",
+      "type":"number",
+      "visible":false
+    },
+    {
+      "name":"roles_dsc",  
+      "title":"Rol"
+    },
+    {
+      "name":"estado",
+      "title":"Estado",
+      "visible":true
+    }
+  ]

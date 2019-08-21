@@ -1,0 +1,23 @@
+[
+  {
+    "name":"id_tablapadre",
+    "title":"ID",
+    "type":"number",
+    "visible":false
+  },
+  {
+    "name":"desc_tablapadre",
+    "title":"Menu"
+  },
+  {
+    "name":"id_tablahijo",
+    "title":"ID",
+    "type":"number",
+    "visible":false
+  },
+  {
+    "name":"desc_tablahijo",
+    "title":"Solapa",
+    "style":{"width":350,"maxWidth":400}
+  }
+  ]

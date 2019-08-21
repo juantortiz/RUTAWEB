@@ -1,0 +1,29 @@
+[
+    {
+      "name":"id",
+      "title":"ID",
+      "type":"number"
+    },
+    {
+      "name":"rol_id",
+      "title":"ID ROL",
+      "type":"number",
+      "visible":false
+    },
+    {
+        "name":"entxacciones_id",
+        "title":"ID Relacion Entidades-acciones",
+        "type":"number",
+        "visible":false
+    },
+    {
+      "name":"descripcion",  
+      "title":"Entidad"
+    },
+    
+    {
+      "name":"estado",
+      "title":"Estado",
+      "visible":true
+    }
+  ]

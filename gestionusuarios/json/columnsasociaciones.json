@@ -1,0 +1,36 @@
+[
+    {
+      "name":"id",
+      "title":"ID",
+      "type":"number"
+    },
+    {
+      "name":"descripcion",
+      "title":"Descripcion"
+    },
+    {
+      "name":"entidad",  
+      "title":"Entidad"
+    },
+    {
+      "name":"id_entidad",
+      "title":"ID ENTIDAD",
+      "type":"number",
+      "visible":false
+    },
+    {
+      "name":"acciones",  
+      "title":"Acciones"
+    },
+    {
+      "name":"id_acciones",
+      "title":"ID ACCION",
+      "type":"number",
+      "visible":false
+    },
+    {
+      "name":"estado",
+      "title":"Estado",
+      "visible":true
+    }
+  ]

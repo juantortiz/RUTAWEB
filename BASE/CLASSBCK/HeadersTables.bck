@@ -1,0 +1,18 @@
+<?php
+/**
+     * @author Juan Tomas Ortiz
+     * @category Class HeadersTables
+     * @version 0.1
+     * 
+*/
+namespace Softing\Base;
+
+class HeadersTables {
+     private $HEADER_VIEW_USUARIOS = null;
+     private $HEADER_VIEW_PERFILES = null;
+     function __construct($tabla)
+     {
+         
+     }
+}
+?>

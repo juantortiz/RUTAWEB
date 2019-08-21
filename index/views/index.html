@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='/BASE/CSS/dist/css/bootstrap.css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i' rel='stylesheet'>
+<link rel='stylesheet' href='/BASE/CSS/dist/css/poncho.min.css'>
+<link rel='stylesheet' href='/BASE/CSS/dist/css/icono-arg.css'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="/BASE/CSS/RUTA/footer.css">
+<title>Sistema RUTA - Ministerio de Transporte de la Nacion Argentina</title>
+</head>
+<body>
+    <div class="envelop">
+    <div class='container-fluid'>
+        <!-- Row de cabecera y menu -->
+        <div class="row">
+                <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                        <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="../../BASE/IMG/logo_ministerio_grande_blanco.png" height="50" alt=""></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                        
+                        </ul>
+                        </div>
+                        </div>
+                        </nav>
+        </div>
+        <!-- Row de Center -->
+        <div class='row text-center m-t-2'>
+          <div class="container">
+                <div class="col-md-4" style="display: inline-block; float:none; text-align:left;">
+                    <div class="panel">
+                        <h2 class=" title-login text-center" style="color:#0072bb;">
+                            Sistema RUTA
+                        </h2>
+                        <div class="panel-body">
+                          <form>
+                              <div class="form-group" id="divuser" >
+                                <label for="inputUser" style="color:#0072bb;" id="labelusuario">Usuario</label>
+                                <input type="text" id="textusuario" class="form-control" placeholder="Ingresar el usuario" required>
+                              </div>
+                              <div class="form-group" id="divpassword">
+                                <label for="inputUser" style="color:#0072bb;" id="labelpassword">Contraseña</label>
+                                <input type="password" id="textpassword" class="form-control" placeholder="Ingresar su contraseña">
+                              </div>
+                          </form>
+                          <button class="btn btn-info" style="width: 100%;" id="aceptarusuario"><i class="fa fa-user"></i>&#32; Aceptar</button>
+                        </div>
+                        <div align="center" class="panel-body" >
+                        <a href="#" data-toggle="modal" data-target="#olvidocontrasena" style="width: 100%;"><i class="fa fa-user"></i>&#32; Olvido Contraseña</a>
+                        </div>
+                      <div class="panel-footer">
+                            <span class="alert alert-danger m-t-2" style="display:none;" id="useralerta">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                Usuario o Password Incorrecto.
+                            </span>
+                            <span class="alert alert-danger m-t-2" style="display:none;" id="useralerta2">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                Usuario Bloqueado. Contacte con el Administrador.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+          </div>  
+        </div>
+<!--Row de reporte de error-->
+        <div class="modal fade" id="reporteenvio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                </button>
+                <h5 class="modal-title text-center" id="exampleModalLongTitle" style="color:#0072bb;">Informe de errores</h5>
+                  
+              </div>
+              <div class="modal-body">
+                      <form id="datosError">        
+                              <label class="text-info" for="input-group">Descripcion del error</label>
+                              <div class="input-group" id="comentariosdiv">            
+                                  <textarea class="form-control" rows="5" id="comentarios" placeholder="Copie y pegue el error que le sale"></textarea>
+                                  <span class="input-group-addon"><i class="fa fa-bug" aria-hidden="true"></i></span>
+                              </div>
+                              <span class="alert alert-danger m-t-2" style="display:none;" id="textoalerta">
+                                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                  Ingrese datos en el area de texto. Gracias.
+                              </span>
+                              <span class="alert alert-success m-t-2" style="display:none;" id="textook">
+                                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                  Su informacion se ha enviado con exito. Gracias por su colaboracion.
+                              </span>
+                      </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="cerrar_enviar_error"><i class="fa fa-window-close" aria-hidden="true"></i>&nbsp; &nbsp;Cerrar</button>
+                <button type="button" class="btn btn-primary" id="enviar_enviar_error"> <i class="fa fa-envelope-open" aria-hidden="true"></i>&nbsp; &nbsp;Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+<!--Row de olvido de contraseña-->
+  <div class="modal fade" id="olvidocontrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+          </button>
+          <h5 class="modal-title text-center" id="exampleModalLongTitle" style="color:#0072bb;">Olvido de Contraseña</h5>
+            
+        </div>
+        <div class="modal-body">
+                <form name="formulario" method="POST" action="gestionusuarios/controller/OlvidoUsuarios.php">        
+                    <div class="form-group" id="divuser" >
+                        <label for="inputUser" style="color:#0072bb;" id="labelusuario">Usuario</label>
+                        <input type="text" id="textusuario" name="labelusuario" class="form-control" placeholder="Ingresar el usuario" required>
+                      </div>                       
+                        <div class="form-group" >
+                            <label  style="color:#0072bb;" id="pregunta">Pregunta de seguridad</label>
+                                <select class="form-control" name="pregunta" required >                                
+                                <option value="">Elige una pregunta de seguridad</option>
+                                <option value=1>�Nombre de tu primer mascota?</option>                                    
+                                <option value=2>�Nombre de tu abuela materna?</option>                                    
+                                <option value=3>�Nombre de tu abuelo paterno?</option>                                   
+                                </select>
+                          </div>
+                          <div class="form-group" >
+                              <label  style="color:#0072bb;" id="respuesta">Respuesta de seguridad</label>
+                              <input  type="text" id="respuesta" name="respuesta" class="form-control" placeholder="Ingresar la respuesta de seguridad" required>
+                            </div>                
+                    </div>
+        <div class="modal-footer"> 
+            <button type="submit" class="btn btn-primary" id="aceptarusuario"><i class="fa fa-envelope-open" aria-hidden="true"></i>&nbsp; &nbsp;Aceptar</button>       
+         </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <!--Fin de Row-->
+      <footer class="footer">
+        <button class="btn btn-info button-than" data-toggle="modal" data-target="#reporteenvio" ><i class="fas fa-angry"></i>&#32; Reportar un error</button>
+      </footer>
+    
+<script type="text/javascript" src="/BASE/JS/ClassInclude.js"></script>
+<script type="text/javascript" src="/index/js/ClassIncludeIndex.js"></script>
+</body>
+</html>

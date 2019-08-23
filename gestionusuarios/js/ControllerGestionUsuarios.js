@@ -61,6 +61,7 @@ ControllerGestionUsuarios =
                     "dropdownTitle":"Buscar en...",
                     "placeholder":"Buscar..."
                 },
+                "empty":"Sin registros",
                 paging:
                 {
                     enabled:true,

@@ -16,7 +16,7 @@ ControllerLogin.Listar = {
     },
     aceptar: function()
     {
-        let url = "http://201.216.197.213/domicilios/provincias";
+        let url = "http://201.216.197.213/domicilios-provincias";
         //let usuario = this.text_usuario.val();
         //let pass = this.text_password.val();
         //let mensaje = 'usuario=' + usuario + "&pass="+ pass;

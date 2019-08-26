@@ -7,21 +7,22 @@
 */
     namespace Softing\ControllerProvincias;
 
+    include_once("BASE/PHP/Base.php");
+    include_once("BASE/PHP/ControllerBaseQuery.php"); 
+    
     include_once("domicilios/model/ModelClassValidateProvincia.php"); 
 
     class ControllerProvincias
     {
         private $objclassvalidateprov = null;
         private $error_class = null;
-        private $user = "";
-        private $pass = "";
+        
         function __construct ()
         {
             try 
             {
                 $this->objclassvalidateprov = new \Softing\Model\ModelClassValidateProvincia();
-                //$this->user = $_GET["usuario"];
-                //$this->pass = $_GET["pass"];
+                
             }
             catch (\Exception $e)
             {
@@ -36,7 +37,7 @@
         */
     }
 
-    $controller_validacion = new ControllerLogin();
+    $controller_validacion = new ControllerProvincias();
     //echo $controller_validacion->validacion_usuario();
 
 ?>

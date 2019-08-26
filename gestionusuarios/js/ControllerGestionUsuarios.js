@@ -161,7 +161,6 @@ ControllerGestionUsuarios =
                             tagElement = $(button);
                             if(values.estado == "false")
                             {
-                                
                                 allRows[id].classes.push("bg-white");
                                 tagElement.removeClass('btn btn-danger footable-delete');
                                 tagElement.addClass('btn btn-info footable-delete');

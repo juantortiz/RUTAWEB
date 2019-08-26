@@ -4,7 +4,6 @@
 			{
                 "menu":"SISTEMAS",
                 "icon":"fa fa-address-card",
-                "url":"http://localhost/usuarios",
                 "pestanas":
                 [
                     {
@@ -73,47 +72,6 @@
                         ]
                     }
                 ]
-            },
-		 	{
-                "menu":"Operadores",
-                "icon":"fa fa-user",
-                "url":"http://localhost/operadores",
-                "pestanas":
-                [
-                    {
-                        "nombre":"Usuarios",
-                        "acciones":[
-                            {
-                                "Alta":true,
-                                "Baja":true,
-                                "Modificaciones":true
-                            }
-                        ]
-                    },
-                    {
-                        "nombre":"Perfiles",
-                        "acciones":[
-                            {
-                                "Alta":true,
-                                "Baja":true,
-                                "Modificaciones":true
-                            }
-                        ]
-                    },
-                    {
-                        "nombre":"Menu",
-                        "acciones":[
-                            {
-                                "Alta":true,
-                                "Baja":true,
-                                "Modificaciones":true,
-                                "Imprimir":false,
-                                "Exportar":false,
-                                "Visualizar":false
-                            }
-                        ]
-                    }
-                ]
-		  	}
+            }
     ]
 }

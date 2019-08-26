@@ -97,7 +97,8 @@ ControllerReadMenuDynamic = {
                             {
                                     let id = ePes.nombre.toLowerCase();
                                     let tagElement = $("#"+id);
-                                    let tabElement = $("#tab"+id);
+                                    let table = $("#table"+id);
+                                    console.info(table.footable);
                                     tagElement.show();
                                     ControllerReadMenuDynamic.switchReadTable(id,ePes.acciones);
                             }); 
@@ -116,8 +117,9 @@ ControllerReadMenuDynamic = {
                         {
                                 let id = ePes.nombre.toLowerCase();
                                 let tagElement = $("#"+id);
-                                let tabElement = $("#tab"+id);
+                                let table = $("#table"+id);
                                 tagElement.hide();
+                                table.hide();
                         });
                 });
              }

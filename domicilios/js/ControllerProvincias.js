@@ -5,8 +5,8 @@
     * @link: none
 */
 
-ControllerLogin = {};
-ControllerLogin.Listar = {
+ControllerProvincias = {};
+ControllerProvincias.Listar = {
 
     text_nombre:null,
     init:function()
@@ -27,8 +27,8 @@ ControllerLogin.Listar = {
         XHR.NewXhrGET(thisurl,function(RText){
            
                  let valor_respuesta = JSON.parse(RText);              
-                 let urladmin = 'http://201.216.197.213/usuarios';
-                 let urlusuario = 'http://201.216.197.213/Nuevos';        
+                 let urladmin = 'http://201.216.197.213/domicilios-provincias';
+                 //let urlusuario = 'http://201.216.197.213/Nuevos';        
                 if (valor_respuesta['auth'] == 'OK')
                 {
                       $.ajax({
@@ -43,19 +43,19 @@ ControllerLogin.Listar = {
                 }
                 if (valor_respuesta['auth'] == 'BAD')
                 {
-                    ControllerLogin.Login.div_usuario.addClass('has-error');
-                    ControllerLogin.Login.div_password.addClass('has-error');
-                    ControllerLogin.Login.info_user.css({'display':'block'});
-                    ControllerLogin.Login.text_usuario.val('');
-                    ControllerLogin.Login.text_password.val('');
+                    ControllerProvincias.Login.div_usuario.addClass('has-error');
+                    ControllerProvincias.Login.div_password.addClass('has-error');
+                    ControllerProvincias.Login.info_user.css({'display':'block'});
+                    ControllerProvincias.Login.text_usuario.val('');
+                    ControllerProvincias.Login.text_password.val('');
                 } 
                 if (valor_respuesta['auth'] == 'BLOQ')
                 {
-                    ControllerLogin.Login.div_usuario.addClass('has-error');
-                    ControllerLogin.Login.div_password.addClass('has-error');
-                    ControllerLogin.Login.info_user2.css({'display':'block'});
-                    ControllerLogin.Login.text_usuario.val('');
-                    ControllerLogin.Login.text_password.val(''); 
+                    ControllerProvincias.Login.div_usuario.addClass('has-error');
+                    ControllerProvincias.Login.div_password.addClass('has-error');
+                    ControllerProvincias.Login.info_user2.css({'display':'block'});
+                    ControllerProvincias.Login.text_usuario.val('');
+                    ControllerProvincias.Login.text_password.val(''); 
                 }
                 if (valor_respuesta['auth'] == 'NUEVO')
                 {            

@@ -18,9 +18,14 @@
 		case '/usuarios':
 			require __DIR__ . '/gestionusuarios/views/gestionusuarios.html';
 			break;
+		
+		/* Paths de domicilios */
 		case '/domicilios-provincias':
 			require __DIR__ . '/domicilios/views/provincias.html';
 			break;
+
+		/* END Paths de domicilios */
+
 		case (preg_match('/querySystem/',$request) ? true : false):
 			require __DIR__ . '/gestionusuarios/controller/ControllerMenu.php';
 			break;

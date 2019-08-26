@@ -3,7 +3,7 @@
    * @author Syloper
    * @category Class ControllerProvincias
    * @version 0.1
-   * @link: http://<host>:<port>/domicilios/provincias
+   * @link: http://<host>:<port>/domicilios-provincias
 */
     namespace Softing\ControllerProvincias;
 

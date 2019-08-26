@@ -6,7 +6,7 @@
     * @link: none
 */
 
-	 $request = $_SERVER['REQUEST_URI'];
+	$request = $_SERVER['REQUEST_URI'];
 
 	switch ($request) {
 		case '/' :

@@ -21,7 +21,7 @@
 		case (preg_match('/querySystem/',$request) ? true : false):
 			require __DIR__ . '/gestionusuarios/controller/ControllerMenu.php';
 			break;
-	    case (preg_match('/Nuevos/',$request) ? true : false):
+	        case (preg_match('/Nuevos/',$request) ? true : false):
 			require __DIR__ . '/index/views/UsuarioNuevo.html';
 			break; 
 		/** 
@@ -51,7 +51,6 @@
 		case (preg_match('/putWS/',$request) ? true : false):
 			require __DIR__ . '/gestionusuarios/json/menusuarios.json';
 			break;
-		
 		/** Path para las consultas con Ajax */
 		case (preg_match('/pruebaJSON/',$request) ? true : false):
 			require __DIR__ . '/gestionusuarios/controller/ControllerAdministrador.php';

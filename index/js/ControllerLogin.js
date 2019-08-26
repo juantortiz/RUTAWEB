@@ -49,10 +49,11 @@ ControllerLogin.Login = {
                         data:mensaje,
                         url:"/llamadoAjax"
                     }).done(function(datos){
-                        alert('Los Datos son: ' + JSON.stringify(datos)); 
-                        window.location=urladmin
-                      });
-
+                        let json = JSON.stringify(datos);
+                        sessionStorage.setItem('data', json);
+                        let sesion = sessionStorage.getItem('data'); 
+			window.location=urladmin;  
+                   });
                 }
                 if (valor_respuesta['auth'] == 'BAD')
                 {

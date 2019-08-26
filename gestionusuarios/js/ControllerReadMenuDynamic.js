@@ -14,21 +14,17 @@ ControllerReadMenuDynamic = {
                  let menu = $('#menuprincipal');
                  let desplegable = valores.desplegable;
                  desplegable.forEach(function(elemento){
+                    console.info(elemento);
                     ClassCreateHtmlMenu.createTagLiSubMenu(menu,elemento.url,elemento.menu,elemento.menu,elemento.icon);
-                    let url = window.location.href;
-                    if(url==elemento.url)
-                    {
                         let arregloPestanas = elemento.pestanas;
                         arregloPestanas.forEach(function(ePes)
                         {
                                 let id = ePes.nombre.toLowerCase();
                                 let tagElement = $("#"+id);
                                 let tabElement = $("#tab"+id);
-                                tagElement.show();
+                                tagElement.show(); 
                                 ControllerReadMenuDynamic.switchReadTable(id,ePes.acciones);
                         });
-                        
-                    }
                     
                  });
 
@@ -36,9 +32,6 @@ ControllerReadMenuDynamic = {
 
                  desplegable.forEach(function(elemento)
                  {
-                    let url = window.location.href;
-                    if(url==elemento.url)
-                    {
                         let arregloPestanas = elemento.pestanas;
                         let lastElement = arregloPestanas[arregloPestanas.length-1];
                         let lastId = lastElement.nombre.toLowerCase();
@@ -46,7 +39,6 @@ ControllerReadMenuDynamic = {
                         let tagLastElement = $("#"+lastId);
                         tagLastElement.addClass("active");
                         tabLastElement.addClass("fade in active");
-                    }
                  });
                  
              },

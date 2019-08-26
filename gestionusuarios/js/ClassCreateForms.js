@@ -268,6 +268,7 @@ ClassCreateForms =
                     ClassFormInputs.inputFormHTMLOption("Entidad","text-info","entidad", divObj,"entidades_view");
                     ClassFormInputs.inputFormHTMLMultiselect("Acciones","text-info","accionesSel",divObj,arregloOpciones,arregloValoresOpciones); 
                     ClassFormInputs.buttonAdd('btn btn-primary','cerrar_enviar_error','fa fa-window-close','Cerrar', footer);
+                    ClassFormInputs.buttonAdd('btn btn-primary','guardar','fa fa-save','Guardar', footer);
                 });
         }
         

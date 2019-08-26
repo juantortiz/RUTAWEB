@@ -8,7 +8,7 @@
 namespace Softing\Base;
 class Base {
      const DB_NAME = "ruta";
-     const DB_IP_LOCAL = "localhost";
+     const DB_IP_LOCAL = "200.200.1.33";
      const DB_IP_PRIVATE = "200.200.1.33";
      //const DB_IP_PUBLIC = "186.137.157.233";
      const PORT_DB_PRIVATE = "5432";

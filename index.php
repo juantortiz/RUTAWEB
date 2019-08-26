@@ -18,7 +18,7 @@
 		case '/usuarios':
 			require __DIR__ . '/gestionusuarios/views/gestionusuarios.html';
 			break;
-		case '/domicilios/provincias':
+		case '/domicilios-provincias':
 			require __DIR__ . '/domicilios/views/provincias.html';
 			break;
 		case (preg_match('/querySystem/',$request) ? true : false):

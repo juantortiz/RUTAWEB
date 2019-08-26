@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='../../BASE/CSS/dist/css/bootstrap.css'>
+<link rel='stylesheet' href='../../BASE/CSS/dist/css/poncho.min.css'>
+<link href="../../BASE/TABLE/footable/css/footable.bootstrap.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i' rel='stylesheet'>
+<link rel='stylesheet' href='../../BASE/CSS/dist/css/icono-arg.css'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel='stylesheet' href='/BASE/CSS/RUTA/footer.css'>
+<title>Sistema RUTA - Ministerio de Transporte de la Nacion Argentina</title>
+</head>
+<body>
+    <div class='envelop'>
+    <div class='container-fluid'>
+        <div class="row">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#botones" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="http://localhost"><img src="../../BASE/IMG/logo_ministerio_grande_blanco.png" height="50" alt=""></a>
+                          </div>
+                          
+                        <div class="collapse navbar-collapse" id="botones">
+                            <div class="avatar">
+                              <i class="fa fa-user-circle fa-3x" style ="color:#0072bb"aria-hidden="true"></i>
+                            <span class="fontavatar">Administrador</span>
+                          </div>
+                            <ul class="nav navbar-nav navbar-right">
+                                      <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                          MENU
+                                          <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" id="menuprincipal">
+                                        </ul>
+                                      </li>
+                                      
+                                      <li>
+                                        <a href="#" id="salir"> 
+                                          <i class="fa fa-door-open" aria-hidden="true"></i>
+                                            &#32; Salir
+                                        </a>
+                                      </li>
+                                         
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+
+                        
+                    </div><!-- /.container-fluid -->
+                </nav>
+        </div>
+      
+        <!-- tabs para presentacion -->
+        <div class="row">
+            <div class="container" id="containerTabs">
+              <ul class="nav nav-tabs" id="administrador" role="tablist">
+                  <li id="usuarios" style="display:none;">
+                    <a class="text-info" data-toggle="tab" href="#tabusuarios">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i> 
+                      Provincias
+                    </a>
+                  </li>
+                  <li id="perfiles" style="display:none;">
+                    <a class="text-info" data-toggle="tab" href="#tabperfiles">
+                      <i class="fa fa-id-badge" aria-hidden="true"></i>
+                      Localidades
+                    </a>
+                  </li>
+              </ul>
+
+              <!-- tablas para los items del menu -->
+              <div class="tab-content">
+                <div id="tabusuarios" class="tab-pane">
+                  <div class="thistable" style="margin: 2em;" id="containertable">
+                        <table class="table table-striped table-condensed" id="tablausuarios">
+         
+                        </table>
+                  </div>
+                </div>
+                <div id="tabperfiles" class="tab-pane fade">
+                    <div class="thistable" style="margin: 2em;" id="containertable">
+                          <table class="table table-striped table-condensed" id="tablaperfiles">
+           
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <button class="btn btn-info button-than" data-toggle="modal" data-target="#errorenvio" data-backdrop="static" data-keyboard="false" onclick=""><i class="fas fa-angry"></i>&#32; Reportar un error</button>
+    </footer>
+
+
+<!-- Modal Perfiles (abm de perfiles en si) 
+<div class="modal fade" id="modalPerfiles" tabindex="-1" role="dialog" aria-labelledby="ModalGeneral" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="titleModalPerfiles" style="color:#0072bb;">
+            Modificar
+          </h5>
+        </div>
+        <div class="modal-body" id="divFormEnvelopPerfiles">
+                <form id="formDatosDinamicosPerfiles">        
+                      
+                </form>
+        </div>
+        <div class="modal-footer" id="footerIdPerfiles">
+
+        </div>
+      </div>
+    </div>
+</div>-->
+
+  <!-- Modal de aviso de eliminacion -->
+<div class="modal fade text-danger" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="titleModal">
+              Aviso de eliminacion de registro
+            </h5>
+          </div>
+          <div class="modal-body">
+                  <h6>Esta seguro que desea eliminar el registro</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="aceptar_eliminacion"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp; &nbsp;Aceptar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelar_eliminacion"><i class="fa fa-ban" aria-hidden="true"></i>&nbsp; &nbsp;Cancelar</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+<!-- Modal de envio de errores -->
+<div class="modal fade" id="errorenvio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="exampleModalLongTitle" style="color:#0072bb;">Informe de errores</h5>
+        </div>
+        <div class="modal-body">
+                <form id="datosError">        
+                        <label class="text-info" for="input-group">Descripcion del error</label>
+                        <div class="input-group" id="comentariosdiv">            
+                            <textarea class="form-control" rows="5" id="comentarios" placeholder="Copie y pegue el error que le sale"></textarea>
+                            <span class="input-group-addon"><i class="fa fa-bug" aria-hidden="true"></i></span>
+                        </div>
+                        <span class="alert alert-danger m-t-2" style="display:none;" id="textoalerta">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            Ingrese datos en el area de texto. Gracias.
+                        </span>
+                        <span class="alert alert-success m-t-2" style="display:none;" id="textook">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            Su informacion se ha enviado con exito. Gracias por su colaboracion.
+                        </span>
+                </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="cerrar_enviar_error"><i class="fa fa-window-close" aria-hidden="true"></i>&nbsp; &nbsp;Cerrar</button>
+          <button type="button" class="btn btn-primary" id="enviar_enviar_error"> <i class="fa fa-envelope-open" aria-hidden="true"></i>&nbsp; &nbsp;Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<script src="../../BASE/JS/ClassInclude.js"></script>
+<script src='../../BASE/TABLE/footable/js/moment.min.js'></script>
+<script src='../../BASE/TABLE/footable/js/footable.js'></script>
+
+<script type="text/javascript" src="/BASE/JS/ClassInclude.js"></script>
+<script type="text/javascript" src="/index/js/ClassIncludeIndex.js"></script>
+
+</body>
+</html>

@@ -14,7 +14,6 @@ ControllerReadMenuDynamic = {
                  let menu = $('#menuprincipal');
                  let desplegable = valores.desplegable;
                  desplegable.forEach(function(elemento){
-                    console.info(elemento);
                     ClassCreateHtmlMenu.createTagLiSubMenu(menu,elemento.url,elemento.menu,elemento.menu,elemento.icon);
                         let arregloPestanas = elemento.pestanas;
                         arregloPestanas.forEach(function(ePes)

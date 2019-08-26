@@ -10,4 +10,5 @@ ControllerError.EnviaError.init();
 ControllerError.EnviaError.btn_cerrar.click(function(){
         ControllerError.EnviaError.cerrar();
     });
+ControllerGestionUsuarios.changeButton();
 });

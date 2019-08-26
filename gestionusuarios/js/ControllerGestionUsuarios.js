@@ -81,7 +81,7 @@ ControllerGestionUsuarios =
                     alwaysShow:true,
                     addText:"<i class='fa fa-plus-circle' aria-hidden='true'></i> Agregar",
                     editText:"<i class='fa fa-arrow-up'></i>",
-                    deleteText:"<i class='fa fa-thumbs-down'></i>",
+                    deleteText:"<i class='fa fa-thumbs-up'></i>",
                     viewText:"<i class='fa fa-edit'></i>",
                     addRow:function()
                     {
@@ -132,14 +132,21 @@ ControllerGestionUsuarios =
                             let tamanoChild = objTag.value[0].childNodes.length-1;
                             let button = objTag.value[0].childNodes[tamanoChild];
                             tagElement = $(button);
-                            if(values.estado == "false")
-                            {
-                                  
+                            if(values.estado === "Inactivo")
+                            { 
                                 allRows[id].classes.push("bg-white");
                                 tagElement.removeClass('btn btn-danger footable-delete');
                                 tagElement.addClass('btn btn-info footable-delete');
                                 tagElement.children().removeClass('fa fa-thumbs-down');
                                 tagElement.children().addClass('fa fa-thumbs-up');      
+                            }
+                            else 
+                            {
+                                allRows[id].classes.push("bg-white");
+                                tagElement.removeClass('btn btn-info footable-delete');
+                                tagElement.addClass('btn btn-delete footable-delete');
+                                tagElement.children().removeClass('fa fa-thumbs-up');
+                                tagElement.children().addClass('fa fa-thumbs-down'); 
                             }
                             
                           
@@ -159,7 +166,7 @@ ControllerGestionUsuarios =
                             let tamanoChild = objTag.value[0].childNodes.length-1;
                             let button = objTag.value[0].childNodes[tamanoChild];
                             tagElement = $(button);
-                            if(values.estado == "false")
+                            if(values.estado === "Inactivo")
                             {
                                 allRows[id].classes.push("bg-white");
                                 tagElement.removeClass('btn btn-danger footable-delete');
@@ -170,11 +177,16 @@ ControllerGestionUsuarios =
                         });
 
 
-                    }
+                    } 
+
                 }
             });
             
+            
         });
+
+
+
     },
 
     /**
@@ -218,7 +230,6 @@ ControllerGestionUsuarios =
             case "roles_asociaciones":
                 {
                     ClassCreateForms.createFormRolesAsociaciones(tipoVista,valoresFilas,FT,ROW);
-                    console.info("roles_x_asociaciones");
                     break;
                 }
             case "menu":
@@ -282,8 +293,7 @@ ControllerGestionUsuarios =
                     resultrow.modo = operacion;
                     resultrow.id = thisrow.id;
                     resultrow.id_entidades =  thisrow.entxacciones_id;
-                    resultrow.rol_id = thisrow.rol_id;
-                    console.info(resultrow);    
+                    resultrow.rol_id = thisrow.rol_id;   
                     acciones["UPD"] = "roles_asociaciones_abm";
                     acciones["ADD"] = "roles_asociaciones_abm";
                     acciones["DEL"] = "roles_asociaciones_abm"; 
@@ -374,8 +384,15 @@ ControllerGestionUsuarios =
                 }
         }
         return datos;
-    },
-    changeButton:function(row)
+     },
+     changeButton:function()
+     {
+        $('button').click(function()
+        {
+            console.info($(this));
+        });
+     }
+    /* changeButton:function(row)
     {
         let posRow = row.cells.length-1
         let infor = $(row.cells[posRow].$el[0].childNodes[0].childNodes[2]);
@@ -395,6 +412,15 @@ ControllerGestionUsuarios =
             infor.children().removeClass('fa fa-thumbs-up');
             infor.children().addClass('fa fa-thumbs-down');
         }
-    }
+
+        $('btn').click(function()
+        {
+            if($(this).hasClass('btn-danger'))
+            {
+                $(this).toggleClass('btn-info');
+            }
+        });
+
+    } */ 
     
 }

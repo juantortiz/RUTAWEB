@@ -842,7 +842,6 @@ ClassCreateForms =
    
     createFormRolesAsociaciones:function(mode,valores,ft,ROW)
     {
-        console.info(ROW);
         this.init("#formDatosDinamicosRolesAsociaciones","#divFormularioDinamicoRolesAsociaciones","#footerIdRolesAsociaciones");
         this.insertModalFormControlRolesAsociaciones(mode,valores);
         let descr = this.membersObj.formObj.find("#descripcion");

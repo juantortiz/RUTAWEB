@@ -8,7 +8,7 @@
 */
 Base = 
 {
-    WEB_IP_PUBLICA:'201.216.197.213',
+    WEB_IP_PUBLICA:'localhost',
     WEB_IP_PRIVADA:'200.200.1.33',
     WEB_IP_LOCAL:'201.216.197.213',
     HTTP:'http://',

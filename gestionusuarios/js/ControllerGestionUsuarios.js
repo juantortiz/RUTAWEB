@@ -106,7 +106,7 @@ ControllerGestionUsuarios =
                         }).done(function(rowsRec){
                             let thisrows = [];
                             ft.rows.load(rowsRec);
-                            ControllerGestionUsuarios.changeButton(row);
+                           // ControllerGestionUsuarios.changeButton(row);
                         });
                         
                     },
@@ -132,7 +132,7 @@ ControllerGestionUsuarios =
                             let tamanoChild = objTag.value[0].childNodes.length-1;
                             let button = objTag.value[0].childNodes[tamanoChild];
                             tagElement = $(button);
-                            if(values.estado === "Inactivo")
+                            /* if(values.estado === "Inactivo")
                             { 
                                 allRows[id].classes.push("bg-white");
                                 tagElement.removeClass('btn btn-danger footable-delete');
@@ -147,7 +147,7 @@ ControllerGestionUsuarios =
                                 tagElement.addClass('btn btn-delete footable-delete');
                                 tagElement.children().removeClass('fa fa-thumbs-up');
                                 tagElement.children().addClass('fa fa-thumbs-down'); 
-                            } 
+                            }  */
                             
                           
                        });
@@ -166,14 +166,14 @@ ControllerGestionUsuarios =
                             let tamanoChild = objTag.value[0].childNodes.length-1;
                             let button = objTag.value[0].childNodes[tamanoChild];
                             tagElement = $(button);
-                           if(values.estado === "Inactivo")
+                          /*  if(values.estado === "Inactivo")
                             {
                                 allRows[id].classes.push("bg-white");
                                 tagElement.removeClass('btn btn-danger footable-delete');
                                 tagElement.addClass('btn btn-info footable-delete');
                                 tagElement.children().removeClass('fa fa-thumbs-down');
                                 tagElement.children().addClass('fa fa-thumbs-up');
-                            }
+                            } */
                         });
 
 

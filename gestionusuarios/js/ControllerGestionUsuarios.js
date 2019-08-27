@@ -81,7 +81,7 @@ ControllerGestionUsuarios =
                     alwaysShow:true,
                     addText:"<i class='fa fa-plus-circle' aria-hidden='true'></i> Agregar",
                     editText:"<i class='fa fa-arrow-up'></i>",
-                    deleteText:"<i class='fa fa-thumbs-up'></i>",
+                    deleteText:"<i class='fa fa-exchange-alt'></i>",
                     viewText:"<i class='fa fa-edit'></i>",
                     addRow:function()
                     {
@@ -147,7 +147,7 @@ ControllerGestionUsuarios =
                                 tagElement.addClass('btn btn-delete footable-delete');
                                 tagElement.children().removeClass('fa fa-thumbs-up');
                                 tagElement.children().addClass('fa fa-thumbs-down'); 
-                            }
+                            } 
                             
                           
                        });
@@ -166,7 +166,7 @@ ControllerGestionUsuarios =
                             let tamanoChild = objTag.value[0].childNodes.length-1;
                             let button = objTag.value[0].childNodes[tamanoChild];
                             tagElement = $(button);
-                            if(values.estado === "Inactivo")
+                           if(values.estado === "Inactivo")
                             {
                                 allRows[id].classes.push("bg-white");
                                 tagElement.removeClass('btn btn-danger footable-delete');
@@ -385,14 +385,8 @@ ControllerGestionUsuarios =
         }
         return datos;
      },
-     changeButton:function()
-     {
-        $('button').click(function()
-        {
-            console.info($(this));
-        });
-     }
-    /* changeButton:function(row)
+    
+    changeButton:function(row)
     {
         let posRow = row.cells.length-1
         let infor = $(row.cells[posRow].$el[0].childNodes[0].childNodes[2]);
@@ -413,14 +407,6 @@ ControllerGestionUsuarios =
             infor.children().addClass('fa fa-thumbs-down');
         }
 
-        $('btn').click(function()
-        {
-            if($(this).hasClass('btn-danger'))
-            {
-                $(this).toggleClass('btn-info');
-            }
-        });
-
-    } */ 
+    }  
     
 }

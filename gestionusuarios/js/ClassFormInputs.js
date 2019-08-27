@@ -42,7 +42,6 @@ ClassFormInputs =
     {
         let strHTML = "<label><span class='"+classText+"'>"+textLabel+"</span></label><input type='password' id='"+idInput+"' class='form-control' type='text' maxlength='30' minlength='10'>";
         superClassId.append(strHTML);
-        console.info(superClassId);
     },
     inputFormHTMLMultiselect:function(textLabel,classText,idSelect,superClassId,arrayOptions,arrayValues)
     {   
@@ -172,6 +171,11 @@ ClassFormInputs =
         esteElemento.setAttribute('id',id);
         esteElemento.setAttribute('class',clase);
         return esteElemento;
+    },
+    inputFormCheckBox:function(textLabel,classText,idInput,superClassID)
+    {
+        let strHTML = "<label><span class='"+classText+"'>"+textLabel+"<input id='"+idInput+"' class='form-control' type='checkbox'></span></label>";
+        superClassID.append(strHTML);
     }
 
 }

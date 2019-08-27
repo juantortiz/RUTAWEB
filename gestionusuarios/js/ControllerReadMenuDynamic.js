@@ -78,7 +78,7 @@ ControllerReadMenuDynamic = {
 
              reDrawTabs:function()
              {
-                $(document).click(function(ev)
+                $('a').click(function(ev)
                 {
                     ev.preventDefault();
                     let objetivo = $(ev.target).context.id;

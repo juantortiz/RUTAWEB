@@ -1116,9 +1116,8 @@ ClassCreateForms =
                     formElementObj.append(divElementAdd).promise().done(function()
                     {
                         let divObj = $("#claseDivMenu");
-                        ClassFormInputs.inputFormHTML("Menu","text-info","menu",divObj,'fa fa-bars');
+                        ClassFormInputs.inputFormHTMLWCheckbox("Menu","text-info","menu",divObj,'fa fa-bars');
                         ClassFormInputs.inputFormHTML("Icon","text-info","icon",divObj,'fa fa-ice-cream');
-                        ClassFormInputs.inputFormCheckBox("Default","text-info","default",divObj,'fa fas-check');
                         ClassFormInputs.inputFormHTMLMultiselectDynamic("Solapas","text-info","solapas",divObj,"entidades_view",'fa fa-folder');
                         ClassFormInputs.buttonAdd('btn btn-primary','cerrar_menu','fa fa-window-close','Cerrar', footer);
                         ClassFormInputs.buttonAdd('btn btn-primary','guardar','fa fa-save','Guardar', footer);
@@ -1131,7 +1130,7 @@ ClassCreateForms =
                     formElementObj.append(divElementAdd).promise().done(function()
                     {
                         let divObj = $("#claseDivMenu");
-                        ClassFormInputs.inputFormHTML("Menu","text-info","menu",divObj,'fa fa-bars');
+                        ClassFormInputs.inputFormHTMLWCheckbox("Menu","text-info","menu",divObj,'fa fa-bars');
                         ClassFormInputs.inputFormHTML("Icon","text-info","icon",divObj,'fa fa-ice-cream');
                         ClassFormInputs.inputFormHTMLMultiselectDynamic("Solapas","text-info","solapas",divObj,"entidades_view",'fa fa-folder');
                         ClassFormInputs.buttonAdd('btn btn-primary','cerrar_menu','fa fa-window-close','Cerrar', footer);

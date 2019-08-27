@@ -114,11 +114,15 @@ ClassFormInputs =
           { 
             if(elementTable.entidad_id)
             {
+                console.info(elementTable.estado);
                 optStr += "<option value='"+elementTable.entidad_id+"'>"+elementTable.entidaddescripcion+"</option>";
             }
             else 
             {
-                optStr += "<option value='"+elementTable.id+"'>"+elementTable.descripcion+"</option>";
+                if (elementTable.estado==true)
+                {
+                    optStr += "<option value='"+elementTable.id+"'>"+elementTable.descripcion+"</option>";
+                }
             }
             
           });
@@ -172,10 +176,10 @@ ClassFormInputs =
         esteElemento.setAttribute('class',clase);
         return esteElemento;
     },
-    inputFormCheckBox:function(textLabel,classText,idInput,superClassID)
+    inputFormHTMLWCheckbox: function(textLabel,classText,idInput,superClassId,faicon)
     {
-        let strHTML = "<label><span class='"+classText+"'>"+textLabel+"<input id='"+idInput+"' class='form-control' type='checkbox'></span></label>";
-        superClassID.append(strHTML);
+        let strHTML = "<label><span class='"+classText+"'>"+textLabel+"</span></label><div class='input-group'><span class='input-group-addon text-info'><i class='"+faicon+"'></i></span><span class='input-group-addon'><input type='checkbox' id='check' check></span><input id='"+idInput+"' class='form-control' type='text' maxlength='30' minlength='10'></div>";
+        superClassId.append(strHTML);
     }
 
 }
